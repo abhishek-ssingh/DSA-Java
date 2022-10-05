@@ -3,12 +3,15 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static List<Integer> revArr(List<Integer> arr,int l,int r){
+    public static List<Integer> revArr(List<Integer> arr,int i){
 
-        if (l>=r){return arr;}
-        Collections.swap(arr,l,r);
+        int n = arr.size();
+        if (i>=(n/2)){
+            return arr;
+        }
 
-        return revArr(arr,l+1,r-1);
+        Collections.swap(arr,i,n-i-1);
+        return revArr(arr,i+1);
     }
 
 
@@ -21,7 +24,7 @@ public class Main {
             int ip = scanner.nextInt();
             list.add(ip);
         }
-        System.out.println(revArr(list,0,list.size()-1));
+        System.out.println(revArr(list,0));
     }
 
 }
