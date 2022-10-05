@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class fiboRecursion {
 
+
+//    time complexity is 2^n
     public static int fibo(int n){
 
 
