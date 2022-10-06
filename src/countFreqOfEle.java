@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class countFreqOfEle {
 
@@ -18,9 +16,8 @@ public class countFreqOfEle {
             } else {
                 map.put(key,1);
             }
-        }
 
-        System.out.println(Arrays.toString(map.entrySet().toArray()));
+        }
 
 
     }
