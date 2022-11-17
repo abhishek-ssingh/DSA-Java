@@ -26,7 +26,11 @@ public class RecursionBasics {
         sumTillN_parameterized(i-1,sum+i);
     }
 
+    public static int fibo(int n){
+        if(n<=1) return n;
 
+        return fibo(n-1) + fibo(n-2);
+    }
     public static int sumTillN_functional(int n){
 
         if(n==0) return 0;
@@ -39,6 +43,6 @@ public class RecursionBasics {
         int sum=0;
 //        printTillN(1,n);
 //        printFromN(1,n);
-        System.out.println(sumTillN_functional(n));
+        System.out.println(fibo(n));
     }
 }
