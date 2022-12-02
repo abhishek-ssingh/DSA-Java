@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+// descriptions added
 class Node{
     int data;
     Node left;
