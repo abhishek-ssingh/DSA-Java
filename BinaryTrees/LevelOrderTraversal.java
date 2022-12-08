@@ -15,25 +15,37 @@
  */
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
         
-        if(root==null) return wrapList;
-        queue.offer(root);  //added root in queue
-        while(!queue.isEmpty()){
-            int levelNum = queue.size();
-            List<Integer> subList = new LinkedList<Integer>;
+        List<List<Integer>> res = new ArrayList<>();
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        
+        if(root==null) return res;
+        
+        q.offer(root);
+        
+        while(!q.isEmpty()){
+            List<Integer> wrapList = new ArrayList<>();
+            int size = q.size();
             
-            for(int i=0; i<levelNum;i++){
-                if(queue.peek().left!=null) queue.offer(queue.peek().left);  //adding left
-                if(queue.peek().right!=null) queue.offer(queue.peek().right);   //adding right
-                subList.add(queue.poll().val);   //putting it all in separate list
+            for(int i =0; i<size;i++){
+                
+                //add in wrapList
+                
+                
+                // pop the added one from q            
+                // q.poll();
+                
+                //check if it has some childrens then enqueue them as well
+                if(q.peek().left!=null) q.offer(q.peek().left);
+                if(q.peek().right!=null) q.offer(q.peek().right);
+                
+                wrapList.add(q.poll().val);
+                
             }
             
-            wrapList.add(subList);   //then add list to wrapList
+            res.add(wrapList);
         }
         
-        return wrapList;
-        
+        return res;
     }
 }
